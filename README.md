@@ -1,4 +1,6 @@
+# hashz
 
-# TODO
-## DRY-ify hashz main function
-## Add safe mode for key importing
+
+### TODO:
+1. DRY-ify hashz main function
+2. Add safe mode for key importing
