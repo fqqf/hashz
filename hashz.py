@@ -68,12 +68,12 @@ def main():
 	outlen = args.outlen
 	if not outlen: outlen = 10
 	elif outlen<3:
-		print("Outlen must be minimum 3", file=sys.stderr)
+		print("Outlen must be between 3 and 33", file=sys.stderr)
 
 	if not key or len(key)<2:
 		print("Key is not provided or not valid (Minimum 2 symbols in length)", file=sys.stderr)
 		sys.exit(1)
-
+	print("[WARNING]: Master key is provided in raw (unsafe) mode", file=sys.stderr)
 	while True:
 		for string in sys.stdin.readline().splitlines():
 			print(hashz(string, key, outlen),file=sys.stdout)
