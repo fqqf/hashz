@@ -5,6 +5,8 @@ import sys
 import argparse
 import re
 
+from os import isatty
+
 def insert(source_str, insert_str, pos):
 	return source_str[:pos]+insert_str+source_str[pos:]
 
@@ -77,7 +79,8 @@ def main():
 	while True:
 		for string in sys.stdin.readline().splitlines():
 			print(hashz(string, key, outlen),file=sys.stdout)
-
+		if not sys.stdin.isatty():
+			sys.exit(0)
 
 if __name__ == "__main__":
     main()
